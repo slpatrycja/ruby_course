@@ -6,22 +6,28 @@ end
 
 class CoffeeMachine
 
-	def grind_grains
-		puts 'Grinding grains'
-	end
+	
 	def make_coffee
 		grind_grains
 		puts "Making coffee"
 		add_milk
 	end
 
+
+	private
+
 	def add_milk
 		puts "Adding milk"
 	end
+
+	def grind_grains
+		puts 'Grinding grains'
+	end
+
 end
 
-# ekspres = CoffeeMachine.new
-# ekspres.make_coffee
+ekspres = CoffeeMachine.new
+ekspres.make_coffee
 
 
 class Cat
