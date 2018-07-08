@@ -1,6 +1,12 @@
 class Animal
 	attr_accessor :age, :name, :number_of_legs
 
+	def initialize(age, name, number_of_legs)
+		@age = age
+		@name = name
+		@number_of_legs = number_of_legs
+	end
+
 	def to_s
 		"Name: #{name}, Age: #{age}, Legs: #{number_of_legs}"
 	end
@@ -24,6 +30,10 @@ end
 
 class Cat < Animal
 
+	def initialize(age, name)
+		super(age, name, 4)
+	end
+
 	def scratch
 		puts "I'm a cat, I scratch"
 	end
@@ -32,19 +42,18 @@ class Cat < Animal
 		puts 'Miau!'
 	end
 
-	def to_s
-		super + "\nI'm a cat"
-	end
+
 end
 
 class BlackCat < Cat
 
-	def to_s
-		super + "\nI'm black"
-	end
 end
 
 class Dog < Animal
+
+	def initialize(age, name)
+		super(age*7, name, 4)
+	end
 
 	def bring
 		puts 'Bringing a stick'
@@ -57,12 +66,10 @@ class Dog < Animal
 end
 
 
-animals = [Dog.new, Dog.new, Cat.new, Dog.new]
+animals = [BlackCat.new(12, 'Witek'), 
+	Cat.new(15, 'Teodor'),
+	Animal.new(10, 'Filip', 2),
+	Dog.new(10, 'Bailey')
+	]
 
-animals.each { |animal| animal.give_sound }
-
-cat = BlackCat.new
-cat.age = 12
-cat.name = 'Witek'
-cat.number_of_legs = 4
-puts cat
+animals.each { |animal| puts animal } 
