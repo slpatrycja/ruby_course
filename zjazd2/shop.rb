@@ -45,23 +45,31 @@ class Client
 	def perform_shopping(shop)
 		while product_name = @list.pop
 			product = shop.take(product_name)
-			@bag << product
+
+			if @money >= product.price
+				@money -= product.price
+				@bag << product
+			
+			elsif @money < product.price
+				shop.add_product(product)
+				return false
+			end
 		end
 		true
 	end
 end
 
-shop = Shop.new('Alma')
-shop.add_product(Product.new('bread', 2.5),3)
-shop.add_product(Product.new('milk', 2),4)
-# puts shop.products
-# puts "*************"
-# shop.take('bread')
-# puts shop.products
+# shop = Shop.new('Alma')
+# shop.add_product(Product.new('bread', 2.5),3)
+# shop.add_product(Product.new('milk', 2),4)
+# # puts shop.products
+# # puts "*************"
+# # shop.take('bread')
+# # puts shop.products
 
-client = Client.new('Marek',100)
-client.list = ['bread', 'bread', 'milk','milk']
-client.perform_shopping(shop)
-puts client.bag
-puts "***********"
-puts shop.products
+# client = Client.new('Marek',2)
+# client.list = ['bread', 'bread', 'milk','milk']
+# client.perform_shopping(shop)
+# puts client.bag
+# puts "***********"
+# puts shop.products
