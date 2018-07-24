@@ -50,7 +50,7 @@ class Client
 				@money -= product.price
 				@bag << product
 			
-			elsif @money < product.price
+			else
 				shop.add_product(product)
 				return false
 			end
