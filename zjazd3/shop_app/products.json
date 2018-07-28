@@ -1,0 +1,9 @@
+{
+	"products": [
+		{ "name": "sok", "price": 3.5, "quantity": 20 },
+		{ "name": "batonik", "price": 2.0, "quantity": 15 },
+		{ "name": "czekolada", "price": 3.0, "quantity": 5 }
+
+	]
+
+}
