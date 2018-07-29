@@ -1,4 +1,3 @@
-require 'csv'
 require './product.rb'
 require './shop.rb'
 
