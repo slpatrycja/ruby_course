@@ -39,3 +39,8 @@ INSERT INTO samochody (marka, model, pojemnosc_silnika, rok_produkcji, jest_spra
 
 -- DELETE FROM samochody 
 -- WHERE marka = 'Ford';
+
+-- UPDATE samochody
+-- SET rok_produkcji = 2005
+-- WHERE marka = 'Volkswagen' and model = 'Golf IV';
+
