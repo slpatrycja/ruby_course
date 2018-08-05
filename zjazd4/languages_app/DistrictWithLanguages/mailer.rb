@@ -1,7 +1,6 @@
 require 'mail'
 require 'net/http'
-require 'json'
-require 'pry'
+
 class Mailer
 
 	def initialize(mail, path)
@@ -29,12 +28,10 @@ class Mailer
 
 	end
 
-
-
 	def mailer_deliver
 		receiver = @mail
 		file_path = @path
-		
+
 		Mail.deliver do
 		  to receiver
 		  from 'rubymail038@gmail.com'
