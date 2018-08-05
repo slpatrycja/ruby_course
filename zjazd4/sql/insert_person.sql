@@ -1,0 +1,1 @@
+INSERT INTO osoby (imie, nazwisko, pesel) VALUES ('Kasia', 'Kowalska', 5614814);
