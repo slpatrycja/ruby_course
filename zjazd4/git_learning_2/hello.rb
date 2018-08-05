@@ -1,5 +1,8 @@
 def hello(name, surname)
-	puts "Hello #{surname} #{name}"
+
+	3.times puts {"Hello #{surname} #{name}"}
+
+
 end
 
 hello('janek', 'kowalski')
